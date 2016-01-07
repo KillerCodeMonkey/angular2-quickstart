@@ -21,10 +21,14 @@ System.register(['angular2/core'], function(exports_1) {
                 function AppComponent() {
                     this.name = 'Alice';
                 }
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', String)
+                ], AppComponent.prototype, "name", void 0);
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>Heyho {{name}}</h1>'
+                        template: "\n    <h1>\n        Heyho {{name}}\n    </h1>\n    <input [(ngModel)]=\"name\">\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
