@@ -1,14 +1,32 @@
-<!-- index.html -->
 <html>
+
   <head>
-    <title>Angular 2 Quickstart</title>
-    <script src="https://jspm.io/system@0.18.js"></script>
-    <script src="config.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-alpha.40/angular2.min.js"></script>
+    <title>Angular 2 QuickStart</title>
+
+    <!-- 1. Load libraries -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        transpiler: 'typescript',
+        typescriptOptions: { emitDecoratorMetadata: true },
+        packages: {'app': {defaultExtension: 'ts'}}
+      });
+      System
+        .import('app/boot')
+        .then(null, console.error.bind(console));
+    </script>
+
   </head>
+
+  <!-- 3. Display the application -->
   <body>
-    <!-- The app component created in app.ts -->
     <my-app></my-app>
-    <script>System.import('app');</script>
   </body>
+
 </html>
